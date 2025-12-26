@@ -1,0 +1,8 @@
+# OS/editor noise
+.DS_Store
+*.swp
+*.swo
+
+# local state (don’t commit)
+.nvimlog
+
