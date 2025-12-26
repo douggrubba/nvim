@@ -24,3 +24,9 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - Any other formatters or LSP binaries you add to `lua/plugins` or configure via Mason in the future (e.g., additional language servers, linters, formatters). Mason can install most of them, but keep a note here if something must be installed manually.
 
 Keep this list updated whenever you add plugins that rely on external binaries so future bootstraps stay painless.
+
+## Keyboard Shortcuts
+Leader is mapped to `<Space>`. These keybindings are set in `lua/core/keymaps.lua`:
+
+- `Space`+`f` (normal mode) – run Conform.nvim to format the current buffer.
+- `jj` (insert mode) – leave insert mode without reaching for `<Esc>`.
