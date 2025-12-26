@@ -30,3 +30,11 @@ Leader is mapped to `<Space>`. These keybindings are set in `lua/core/keymaps.lu
 
 - `Space`+`f` (normal mode) – run Conform.nvim to format the current buffer.
 - `jj` (insert mode) – leave insert mode without reaching for `<Esc>`.
+
+Plugin-specific mappings live with their respective specs in `lua/plugins`. Current custom bindings include:
+
+- `Space`+`ff` (normal mode) – trigger `FzfLua files` to search tracked files.
+- `Space`+`fg` (normal mode) – run `FzfLua live_grep` to search across the repo with ripgrep.
+- `Space`+`fb` (normal mode) – list open buffers via `FzfLua buffers`.
+- `Space`+`fh` (normal mode) – open Neovim help tags using `FzfLua help_tags`.
+- `Space`+`fr` (normal mode) – revisit recently opened files through `FzfLua oldfiles`.
