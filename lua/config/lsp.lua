@@ -29,6 +29,50 @@ vim.lsp.config("ts_ls", {
   capabilities = capabilities,
 })
 
--- Enable them
-vim.lsp.enable({ "lua_ls", "gopls", "ts_ls" })
+-- PHP
+vim.lsp.config("intelephense", {
+  capabilities = capabilities,
+})
 
+-- SQL
+vim.lsp.config("sqlls", {
+  capabilities = capabilities,
+  single_file_support = true,
+})
+
+-- Linting for JS/TS/React
+vim.lsp.config("eslint", {
+  capabilities = capabilities,
+})
+
+-- Tailwind CSS
+vim.lsp.config("tailwindcss", {
+  capabilities = capabilities,
+})
+
+-- Web languages shared with React
+vim.lsp.config("cssls", {
+  capabilities = capabilities,
+})
+
+vim.lsp.config("html", {
+  capabilities = capabilities,
+})
+
+vim.lsp.config("jsonls", {
+  capabilities = capabilities,
+})
+
+-- Enable them
+vim.lsp.enable({
+  "lua_ls",
+  "gopls",
+  "ts_ls",
+  "intelephense",
+  "sqlls",
+  "eslint",
+  "tailwindcss",
+  "cssls",
+  "html",
+  "jsonls",
+})

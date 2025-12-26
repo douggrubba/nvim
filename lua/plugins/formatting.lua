@@ -8,10 +8,14 @@ return {
           lua = { "stylua" },
           go = { "gofmt" },
           javascript = { "prettier" },
+          javascriptreact = { "prettier" },
           typescript = { "prettier" },
+          typescriptreact = { "prettier" },
           json = { "prettier" },
           html = { "prettier" },
           css = { "prettier" },
+          php = { "pint" },
+          sql = { "sqlfluff" },
         },
 
         format_on_save = {
@@ -22,4 +26,3 @@ return {
     end,
   },
 }
-

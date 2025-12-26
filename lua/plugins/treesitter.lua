@@ -10,10 +10,21 @@ return {
       end
 
       configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc" },
+        ensure_installed = {
+          "lua",
+          "vim",
+          "vimdoc",
+          "php",
+          "javascript",
+          "typescript",
+          "tsx",
+          "json",
+          "css",
+          "html",
+          "sql",
+        },
         highlight = { enable = true },
       })
     end,
   },
 }
-
