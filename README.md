@@ -37,10 +37,17 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 Keep this list updated whenever you add plugins that rely on external binaries so future bootstraps stay painless.
 
 ## Keyboard Shortcuts
-Leader is mapped to `<Space>`. These keybindings are set in `lua/core/keymaps.lua`:
+Leader is mapped to `<Space>`. Core keybindings from `lua/core/keymaps.lua`:
 
-- `Space`+`f` (normal mode) – run Conform.nvim to format the current buffer.
-- `jj` (insert mode) – leave insert mode without reaching for `<Esc>`.
+- `Space`+`f` (normal) – format the current buffer via Conform.nvim.
+- `<C-s>` (normal/insert) – write the current buffer without leaving insert mode.
+- `jj` (insert) – exit insert mode quickly.
+- `<C-h/j/k/l>` (normal) – hop across window splits without `Ctrl+W`.
+- `<` / `>` (visual) – indent/outdent while keeping the selection highlighted.
+- `p` (visual) – paste without overriding the unnamed register.
+- `Space`+`nh` (normal) – clear the last search highlight.
+- `Space`+`bn` / `Space`+`bp` / `Space`+`bd` (normal) – cycle to the next/prev buffer or delete the current one.
+- `[d` / `]d` (normal) – jump to previous/next diagnostic; `Space`+`e` opens the diagnostic float.
 
 Plugin-specific mappings live with their respective specs in `lua/plugins`. Current custom bindings include:
 
