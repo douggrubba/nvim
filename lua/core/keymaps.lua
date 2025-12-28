@@ -1,10 +1,18 @@
 local M = {}
 local tracked = {}
 
+local function normalize(lhs)
+	if type(lhs) ~= "string" then
+		return lhs
+	end
+	return vim.api.nvim_replace_termcodes(lhs, true, true, true)
+end
+
 local function track(mode, lhs)
 	if not lhs then
 		return
 	end
+	lhs = normalize(lhs)
 	local modes = type(mode) == "table" and mode or { mode }
 	for _, m in ipairs(modes) do
 		tracked[(m or "") .. ":" .. lhs] = true
@@ -20,6 +28,7 @@ function M.is_custom(mode, lhs)
 	if not lhs then
 		return false
 	end
+	lhs = normalize(lhs)
 	if type(mode) == "table" then
 		for _, m in ipairs(mode) do
 			if tracked[(m or "") .. ":" .. lhs] then
@@ -57,7 +66,7 @@ map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
 map("n", "<leader>ky", function()
-	require("which-key").show({ global = false })
+	require("which-key").show()
 end, { desc = "Show keymaps" })
 
 return M
