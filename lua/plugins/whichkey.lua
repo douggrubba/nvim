@@ -4,9 +4,12 @@ return {
 		event = "VeryLazy",
 		config = function()
 			local wk = require("which-key")
+			local keymaps = require("core.keymaps")
 
 			wk.setup({
-				-- keep defaults; they're good
+				filter = function(mapping)
+					return keymaps.is_custom(mapping.mode or "n", mapping.lhs)
+				end,
 			})
 
 			-- Optional: register common top-level groups so the menu looks nice
