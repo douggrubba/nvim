@@ -5,6 +5,12 @@ if ok then
   capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
+-- Show diagnostics inline instead of the sign column gutter
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = false,
+})
+
 -- Lua
 vim.lsp.config("lua_ls", {
   capabilities = capabilities,
