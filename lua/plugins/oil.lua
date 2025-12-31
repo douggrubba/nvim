@@ -30,10 +30,6 @@ return {
 					local sidebar_win = vim.api.nvim_get_current_win()
 					require("oil").open()
 					vim.api.nvim_win_set_width(sidebar_win, 30)
-
-					if vim.api.nvim_win_is_valid(original_win) then
-						vim.api.nvim_set_current_win(original_win)
-					end
 				end,
 				desc = "Toggle Oil sidebar",
 			},
