@@ -61,7 +61,7 @@ map("n", "<leader>wc", "<C-w>c", { desc = "Close current split" })
 map("v", "<", "<gv", { desc = "Indent left and keep selection" })
 map("v", ">", ">gv", { desc = "Indent right and keep selection" })
 map("v", "p", '"_dP', { desc = "Paste without overwriting clipboard" })
-map("n", "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
+map("n", "<leader>h", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
 map("n", "<leader>bn", function()
 	if #vim.api.nvim_list_wins() > 1 then
 		vim.cmd("wincmd w")

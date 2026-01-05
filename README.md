@@ -45,7 +45,7 @@ Leader is mapped to `<Space>`. Core keybindings from `lua/core/keymaps.lua`:
 - `<C-h/j/k/l>` (normal) – hop across window splits without `Ctrl+W`.
 - `<` / `>` (visual) – indent/outdent while keeping the selection highlighted.
 - `p` (visual) – paste without overriding the unnamed register.
-- `Space`+`nh` (normal) – clear the last search highlight.
+- `Space`+`h` (normal) – clear the last search highlight.
 - `Space`+`bn` / `Space`+`bp` / `Space`+`bd` (normal) – cycle to the next/prev buffer in the other split (or current if only one), or delete the current one.
 - `Space`+`wn` / `Space`+`wp` (normal) – move to the next/prev split.
 - `Space`+`wc` (normal) – close the current split.
