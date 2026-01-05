@@ -46,7 +46,9 @@ Leader is mapped to `<Space>`. Core keybindings from `lua/core/keymaps.lua`:
 - `<` / `>` (visual) – indent/outdent while keeping the selection highlighted.
 - `p` (visual) – paste without overriding the unnamed register.
 - `Space`+`nh` (normal) – clear the last search highlight.
-- `Space`+`bn` / `Space`+`bp` / `Space`+`bd` (normal) – cycle to the next/prev buffer or delete the current one.
+- `Space`+`bn` / `Space`+`bp` / `Space`+`bd` (normal) – cycle to the next/prev buffer in the other split (or current if only one), or delete the current one.
+- `Space`+`wn` / `Space`+`wp` (normal) – move to the next/prev split.
+- `Space`+`wc` (normal) – close the current split.
 - `[d` / `]d` (normal) – jump to previous/next diagnostic; `Space`+`e` opens the diagnostic float.
 
 Plugin-specific mappings live with their respective specs in `lua/plugins`. Current custom bindings include:
