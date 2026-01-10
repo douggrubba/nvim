@@ -29,6 +29,7 @@ return {
 			require("fzf-lua").setup({
 				-- defaults are good; keep it simple at first
 				files = {
+					cwd = vim.g.startup_cwd,
 					-- If you prefer to include hidden files by default:
 					-- fd_opts = "--type f --hidden --follow --exclude .git",
 				},
