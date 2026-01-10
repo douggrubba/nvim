@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.o.termguicolors = false
-vim.cmd.colorscheme("default")
+vim.o.termguicolors = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
