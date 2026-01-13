@@ -16,6 +16,7 @@ return {
           css = { "prettier" },
           php = { "pint" },
           sql = { "sqlfluff" },
+          python = { "ruff_format", "black" },
         },
 
         format_on_save = {

@@ -75,7 +75,15 @@ map("n", "<leader>bp", function()
 	vim.cmd("bprevious")
 end, { desc = "Prev buffer (other window if split)" })
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit Neovim" })
+map("n", "<leader>qq", function()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.bo[buf].modified then
+			vim.notify("Unsaved buffers exist; save or close them before quitting.", vim.log.levels.WARN)
+			return
+		end
+	end
+	vim.cmd("qa")
+end, { desc = "Quit Neovim if all buffers are saved" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })

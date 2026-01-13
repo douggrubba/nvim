@@ -18,6 +18,8 @@ return {
           "ts_ls",
           "intelephense",
           "sqlls",
+          "pyright",
+          "ruff",
           "eslint",
           "tailwindcss",
           "cssls",

@@ -46,6 +46,16 @@ vim.lsp.config("sqlls", {
   single_file_support = true,
 })
 
+-- Python
+vim.lsp.config("pyright", {
+  capabilities = capabilities,
+})
+
+-- Python linting (Ruff)
+vim.lsp.config("ruff", {
+  capabilities = capabilities,
+})
+
 -- Linting for JS/TS/React
 vim.lsp.config("eslint", {
   capabilities = capabilities,
@@ -76,6 +86,8 @@ vim.lsp.enable({
   "ts_ls",
   "intelephense",
   "sqlls",
+  "pyright",
+  "ruff",
   "eslint",
   "tailwindcss",
   "cssls",
