@@ -53,6 +53,7 @@ Leader is mapped to `<Space>`. Core keybindings from `lua/core/keymaps.lua`:
 
 Plugin-specific mappings live with their respective specs in `lua/plugins`. Current custom bindings include:
 
+- `Space`+`Space` (normal mode) – trigger `FzfLua files` to find files.
 - `Space`+`ff` (normal mode) – trigger `FzfLua files` to search tracked files.
 - `Space`+`fg` (normal mode) – run `FzfLua live_grep` to search across the repo with ripgrep.
 - `Space`+`fb` (normal mode) – list open buffers via `FzfLua buffers`.
