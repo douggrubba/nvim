@@ -1,13 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.termguicolors = true
-vim.opt.number = true
-vim.opt.relativenumber = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.startup_cwd = vim.fn.getcwd()
 
--- require("core.options") later?
+require("core.options")
 require("core.keymaps")
 require("config.startbuffer")
 -- require("core.autocmds") later?
