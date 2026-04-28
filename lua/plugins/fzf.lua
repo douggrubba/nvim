@@ -19,6 +19,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" }, -- optional, icons
 		cmd = { "FzfLua" },
 		keys = {
+			{ "<leader><leader>", run_picker("files"), desc = "Find files" },
 			{ "<leader>ff", run_picker("files"), desc = "Find files" },
 			{ "<leader>fg", run_picker("live_grep"), desc = "Live grep" },
 			{ "<leader>fb", run_picker("buffers"), desc = "Buffers" },

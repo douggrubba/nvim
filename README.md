@@ -50,9 +50,11 @@ Leader is mapped to `<Space>`. Core keybindings from `lua/core/keymaps.lua`:
 - `Space`+`wn` / `Space`+`wp` (normal) – move to the next/prev split.
 - `Space`+`wc` (normal) – close the current split.
 - `[d` / `]d` (normal) – jump to previous/next diagnostic; `Space`+`e` opens the diagnostic float.
+- `gd` (normal) – peek the definition in a large floating preview; press `q`/`Esc` to close it or `<Enter>` to open the definition.
 
 Plugin-specific mappings live with their respective specs in `lua/plugins`. Current custom bindings include:
 
+- `Space`+`Space` (normal mode) – trigger `FzfLua files` to find files.
 - `Space`+`ff` (normal mode) – trigger `FzfLua files` to search tracked files.
 - `Space`+`fg` (normal mode) – run `FzfLua live_grep` to search across the repo with ripgrep.
 - `Space`+`fb` (normal mode) – list open buffers via `FzfLua buffers`.
