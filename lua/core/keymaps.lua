@@ -219,8 +219,4 @@ map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
 map("n", "gd", peek_definition, { desc = "Peek definition" })
-map("n", "<leader>ky", function()
-	require("which-key").show()
-end, { desc = "Show keymaps" })
-
 return M

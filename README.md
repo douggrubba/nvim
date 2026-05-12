@@ -21,6 +21,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - `Go` toolchain – supplies `gofmt` for Conform.nvim and allows `gopls` (installed via Mason) to work against Go modules.
 - `stylua` – CLI formatter Conform.nvim uses for Lua buffers.
 - `prettier` – CLI formatter for JavaScript/TypeScript/React/JSON/HTML/CSS buffers.
+- GitHub Copilot account access – required for AI tab suggestions and chat. Run `:Copilot auth` inside Neovim once after plugins install.
 - Any other formatters or LSP binaries you add to `lua/plugins` or configure via Mason in the future (e.g., additional language servers, linters, formatters). Mason can install most of them, but keep a note here if something must be installed manually.
 - `pint` – PHP formatter used by Conform.nvim. Install via Composer (`composer global require laravel/pint`) and ensure the binary is on `PATH`.
 - `sqlfluff` – SQL formatter used by Conform.nvim. Install via `pipx install sqlfluff` (or your preferred package manager) and keep its executable on `PATH`.
@@ -33,6 +34,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - **PHP** – `intelephense` LSP support, Treesitter parser, and CLI formatting via `pint`.
 - **SQL** – `sqlls` provides LSP features, the SQL Treesitter parser is installed, and formats run through `sqlfluff`.
 - **Snippets & completion** – `nvim-cmp` now pulls suggestions from LSP, LuaSnip snippets (including `friendly-snippets`), buffers, and filesystem paths for a fuller completion experience.
+- **AI assistance** – `copilot.lua` provides inline ghost-text suggestions, accepted with `<Tab>` when visible, and `CopilotChat.nvim` provides AI chat and code actions.
 
 Keep this list updated whenever you add plugins that rely on external binaries so future bootstraps stay painless.
 
@@ -60,3 +62,11 @@ Plugin-specific mappings live with their respective specs in `lua/plugins`. Curr
 - `Space`+`fb` (normal mode) – list open buffers via `FzfLua buffers`.
 - `Space`+`fh` (normal mode) – open Neovim help tags using `FzfLua help_tags`.
 - `Space`+`fr` (normal mode) – revisit recently opened files through `FzfLua oldfiles`.
+- `<Tab>` (insert mode) – accept a visible AI suggestion; otherwise move through the completion menu or snippets.
+- `<M-l>` / `<M-L>` (insert mode) – accept the next AI suggestion word or line.
+- `<M-]>` / `<M-[>` (insert mode) – cycle AI suggestions.
+- `<C-]>` (insert mode) – dismiss the visible AI suggestion.
+- `Space`+`aa` (normal mode) – toggle AI chat.
+- `Space`+`aq` (normal mode) – ask AI from a prompt.
+- `Space`+`ae` / `Space`+`ar` / `Space`+`af` (normal/visual mode) – explain, review, or fix code with AI.
+- `Space`+`ad` / `Space`+`at` (normal/visual mode) – draft docs or tests with AI.
