@@ -1,3 +1,21 @@
+local function set_chat_source()
+  local ok, chat = pcall(require, "CopilotChat")
+  if not ok or not chat.chat or vim.bo.filetype == "copilot-chat" then
+    return
+  end
+  chat.chat:set_source(vim.api.nvim_get_current_win())
+end
+
+local function open_chat()
+  set_chat_source()
+  require("CopilotChat").open()
+end
+
+local function toggle_chat()
+  set_chat_source()
+  require("CopilotChat").toggle()
+end
+
 return {
   {
     "zbirenbaum/copilot.lua",
@@ -54,8 +72,8 @@ return {
       "CopilotChatTests",
     },
     keys = {
-      { "<leader>aa", "<cmd>CopilotChatToggle<cr>", desc = "Toggle AI chat" },
-      { "<leader>aq", "<cmd>CopilotChat<cr>", desc = "Ask AI" },
+      { "<leader>aa", toggle_chat, desc = "Toggle AI chat" },
+      { "<leader>aq", open_chat, desc = "Ask AI" },
       { "<leader>ae", "<cmd>CopilotChatExplain<cr>", mode = { "n", "v" }, desc = "Explain code" },
       { "<leader>ar", "<cmd>CopilotChatReview<cr>", mode = { "n", "v" }, desc = "Review code" },
       { "<leader>af", "<cmd>CopilotChatFix<cr>", mode = { "n", "v" }, desc = "Fix code" },
@@ -67,6 +85,10 @@ return {
       "nvim-lua/plenary.nvim",
     },
     opts = {
+      resources = {
+        "selection",
+        "buffer:active",
+      },
       window = {
         layout = "vertical",
         width = 0.4,
