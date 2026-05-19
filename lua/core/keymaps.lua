@@ -155,6 +155,63 @@ local function peek_definition()
 	end)
 end
 
+local function open_terminal_modal()
+	local columns = vim.o.columns
+	local lines = vim.o.lines - vim.o.cmdheight
+	local width = math.max(80, math.floor(columns * 0.82))
+	local height = math.max(20, math.floor(lines * 0.72))
+	width = math.min(width, columns - 4)
+	height = math.min(height, lines - 4)
+
+	local term_buf = vim.api.nvim_create_buf(false, true)
+	vim.bo[term_buf].bufhidden = "wipe"
+	vim.bo[term_buf].filetype = "terminal"
+
+	local term_win = vim.api.nvim_open_win(term_buf, true, {
+		relative = "editor",
+		width = width,
+		height = height,
+		col = math.floor((columns - width) / 2),
+		row = math.floor((lines - height) / 2),
+		border = "rounded",
+		style = "minimal",
+		title = " Terminal ",
+		title_pos = "center",
+	})
+
+	vim.wo[term_win].number = false
+	vim.wo[term_win].relativenumber = false
+	vim.wo[term_win].signcolumn = "no"
+
+	local function close_terminal()
+		if vim.api.nvim_win_is_valid(term_win) then
+			vim.api.nvim_win_close(term_win, true)
+		end
+	end
+
+	vim.keymap.set(
+		"n",
+		"q",
+		close_terminal,
+		{ buffer = term_buf, nowait = true, silent = true, desc = "Close terminal" }
+	)
+	vim.keymap.set(
+		"t",
+		"q",
+		close_terminal,
+		{ buffer = term_buf, nowait = true, silent = true, desc = "Close terminal" }
+	)
+	vim.keymap.set(
+		"t",
+		"<Esc>",
+		[[<C-\><C-n>]],
+		{ buffer = term_buf, nowait = true, silent = true, desc = "Leave terminal mode" }
+	)
+
+	vim.fn.termopen(vim.o.shell)
+	vim.cmd("startinsert")
+end
+
 function M.is_custom(mode, lhs)
 	if not lhs then
 		return false
@@ -218,5 +275,6 @@ end, { desc = "Quit Neovim if all buffers are saved" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
+map("n", "<leader>t", open_terminal_modal, { desc = "Open terminal modal" })
 map("n", "gd", peek_definition, { desc = "Peek definition" })
 return M
