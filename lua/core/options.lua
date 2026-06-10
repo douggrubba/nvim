@@ -3,6 +3,7 @@ local M = {}
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.guicursor = table.concat({
 	"n-v-c:block-Cursor/lCursor-blinkwait250-blinkon500-blinkoff300",
