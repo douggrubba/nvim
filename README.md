@@ -30,7 +30,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 
 ## Current Feature Set
 - **Lazy.nvim bootstrap** – `init.lua` clones Lazy.nvim automatically on a clean machine and loads every plugin spec from `lua/plugins`.
-- **Eldritch theme** – transparent dark Eldritch colorscheme, dark floats/sidebars, italic comments, custom cursor colors, highlighted cursor line, and line/relative line numbers.
+- **Kanagawa Wave theme** – transparent editor backgrounds that blend with the matching Alacritty palette, dark readable floats, Kanagawa terminal colors, italic comments, palette-matched cursor colors, a highlighted cursor line, and line/relative line numbers.
 - **Custom start buffer** – opens when Neovim starts without a concrete file, shows the current time, Huntersville weather, current directory, Git branch, and full `git status` with clean/dirty highlighting.
 - **Oil file sidebar** – `<Space>o` toggles a 30-column left sidebar. Opening a file from Oil targets the remembered main editing window instead of replacing the sidebar.
 - **Fzf-lua search** – file, grep, buffer, help, and recent-file pickers use rounded floating windows; live grep includes hidden files while excluding `.git`, and pickers launched from Oil run against the main editing window.

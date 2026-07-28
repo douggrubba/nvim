@@ -13,11 +13,12 @@ vim.opt.guicursor = table.concat({
 }, ",")
 
 local function set_cursor_highlights()
-	vim.api.nvim_set_hl(0, "Cursor", { bg = "#f7c67f", fg = "#11121d" })
-	vim.api.nvim_set_hl(0, "CursorInsert", { bg = "#8be9fd", fg = "#11121d" })
-	vim.api.nvim_set_hl(0, "CursorReplace", { bg = "#ff6e7f", fg = "#11121d" })
-	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#202532" })
-	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#f7c67f", bold = true })
+	local background = "#1f1f28"
+	vim.api.nvim_set_hl(0, "Cursor", { bg = "#c8c093", fg = background })
+	vim.api.nvim_set_hl(0, "CursorInsert", { bg = "#7e9cd8", fg = background })
+	vim.api.nvim_set_hl(0, "CursorReplace", { bg = "#ff5d62", fg = background })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2a2a37" })
+	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e6c384", bold = true })
 end
 
 set_cursor_highlights()
