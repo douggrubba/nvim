@@ -29,10 +29,7 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping(function(fallback)
-            local ok, suggestion = pcall(require, "copilot.suggestion")
-            if ok and suggestion.is_visible() then
-              suggestion.accept()
-            elseif cmp.visible() then
+            if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()

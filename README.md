@@ -21,7 +21,6 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - `Go` toolchain – supplies `gofmt` for Conform.nvim and allows `gopls` (installed via Mason) to work against Go modules.
 - `stylua` – CLI formatter Conform.nvim uses for Lua buffers.
 - `prettier` – CLI formatter for JavaScript/TypeScript/React/JSON/HTML/CSS buffers.
-- GitHub Copilot account access – required for AI tab suggestions. Run `:Copilot auth` inside Neovim once after plugins install.
 - `pint` – PHP formatter used by Conform.nvim. Install via Composer (`composer global require laravel/pint`) and ensure the binary is on `PATH`.
 - `sqlfluff` – SQL formatter used by Conform.nvim. Install via `pipx install sqlfluff` (or your preferred package manager) and keep its executable on `PATH`.
 - `ruff` and `black` – Python formatters used by Conform.nvim. Mason installs the Ruff LSP, but the formatter executables must be on `PATH`.
@@ -39,7 +38,6 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - **Inline diagnostics** – diagnostics render as virtual text, with sign-column diagnostics disabled.
 - **Completion and snippets** – `nvim-cmp` combines LSP, LuaSnip, buffer, and path sources, with `friendly-snippets` loaded lazily.
 - **Formatting on save** – Conform.nvim formats on `BufWritePre` with a 500ms timeout and LSP fallback. `<Space>f` formats the current buffer manually.
-- **AI assistance** – Copilot ghost text starts in insert mode, and `<Tab>` accepts visible suggestions.
 - **Definition preview** – `gd` opens a large rounded floating preview of the first LSP definition; `q`/`Esc` closes it and `<Enter>` opens the definition.
 - **Terminal modal** – `<Space>t` opens the configured shell in a centered floating terminal. `q` closes the terminal window and `<Esc>` leaves terminal mode.
 
@@ -52,7 +50,6 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - **SQL** – `sqlls` provides LSP features, the SQL Treesitter parser is installed, and formats run through `sqlfluff`.
 - **Python** – `pyright` for type-aware language features, `ruff` for linting, Python Treesitter highlighting, and Conform formatting through `ruff_format` with `black` as the fallback.
 - **Snippets & completion** – `nvim-cmp` now pulls suggestions from LSP, LuaSnip snippets (including `friendly-snippets`), buffers, and filesystem paths for a fuller completion experience.
-- **AI assistance** – `copilot.lua` provides inline ghost-text suggestions, accepted with `<Tab>` when visible.
 
 Keep this list updated whenever you add plugins that rely on external binaries so future bootstraps stay painless.
 
@@ -87,9 +84,5 @@ Plugin-specific mappings live with their respective specs in `lua/plugins`. Curr
 - `Space`+`ky` (normal mode) – show leader keymaps through which-key.
 - `<C-Space>` (insert mode) – open the completion menu.
 - `<CR>` (insert mode with completion menu visible) – confirm the selected completion item.
-- `<Tab>` (insert mode) – accept a visible AI suggestion; otherwise move through the completion menu or snippets.
+- `<Tab>` (insert mode) – move through the completion menu or jump forward through snippets.
 - `<S-Tab>` (insert/select mode) – move backward through completion items or jump backward through snippets.
-- `<M-l>` / `<M-L>` (insert mode) – accept the next AI suggestion word or line.
-- `<M-]>` / `<M-[>` (insert mode) – cycle AI suggestions.
-- `<C-]>` (insert mode) – dismiss the visible AI suggestion.
-- Copilot panel mappings: `[[` / `]]` jump between suggestions, `<CR>` accepts, `gr` refreshes, and `<M-CR>` opens the panel.
