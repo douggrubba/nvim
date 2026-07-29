@@ -21,7 +21,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - `Go` toolchain – supplies `gofmt` for Conform.nvim and allows `gopls` (installed via Mason) to work against Go modules.
 - `stylua` – CLI formatter Conform.nvim uses for Lua buffers.
 - `prettier` – CLI formatter for JavaScript/TypeScript/React/JSON/HTML/CSS buffers.
-- GitHub Copilot account access – required for AI tab suggestions and chat. Run `:Copilot auth` inside Neovim once after plugins install.
+- GitHub Copilot account access – required for AI tab suggestions. Run `:Copilot auth` inside Neovim once after plugins install.
 - `pint` – PHP formatter used by Conform.nvim. Install via Composer (`composer global require laravel/pint`) and ensure the binary is on `PATH`.
 - `sqlfluff` – SQL formatter used by Conform.nvim. Install via `pipx install sqlfluff` (or your preferred package manager) and keep its executable on `PATH`.
 - `ruff` and `black` – Python formatters used by Conform.nvim. Mason installs the Ruff LSP, but the formatter executables must be on `PATH`.
@@ -34,12 +34,12 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - **Custom start buffer** – opens when Neovim starts without a concrete file, shows the current time, Huntersville weather, current directory, Git branch, and full `git status` with clean/dirty highlighting.
 - **Oil file sidebar** – `<Space>o` toggles a 30-column left sidebar. Opening a file from Oil targets the remembered main editing window instead of replacing the sidebar.
 - **Fzf-lua search** – file, grep, buffer, help, and recent-file pickers use rounded floating windows; live grep includes hidden files while excluding `.git`, and pickers launched from Oil run against the main editing window.
-- **Which-key discovery** – custom and described mappings are surfaced through which-key, with leader groups for AI, find, git, LSP, buffers, and keymaps.
+- **Which-key discovery** – custom and described mappings are surfaced through which-key, with leader groups for find, git, LSP, buffers, and keymaps.
 - **LSP via Mason** – Mason installs the configured language servers and `nvim-lspconfig` enables them with `nvim-cmp` capabilities.
 - **Inline diagnostics** – diagnostics render as virtual text, with sign-column diagnostics disabled.
 - **Completion and snippets** – `nvim-cmp` combines LSP, LuaSnip, buffer, and path sources, with `friendly-snippets` loaded lazily.
 - **Formatting on save** – Conform.nvim formats on `BufWritePre` with a 500ms timeout and LSP fallback. `<Space>f` formats the current buffer manually.
-- **AI assistance** – Copilot ghost text starts in insert mode, `<Tab>` accepts visible suggestions, and CopilotChat provides chat plus explain/review/fix/docs/tests commands.
+- **AI assistance** – Copilot ghost text starts in insert mode, and `<Tab>` accepts visible suggestions.
 - **Definition preview** – `gd` opens a large rounded floating preview of the first LSP definition; `q`/`Esc` closes it and `<Enter>` opens the definition.
 - **Terminal modal** – `<Space>t` opens the configured shell in a centered floating terminal. `q` closes the terminal window and `<Esc>` leaves terminal mode.
 
@@ -52,7 +52,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - **SQL** – `sqlls` provides LSP features, the SQL Treesitter parser is installed, and formats run through `sqlfluff`.
 - **Python** – `pyright` for type-aware language features, `ruff` for linting, Python Treesitter highlighting, and Conform formatting through `ruff_format` with `black` as the fallback.
 - **Snippets & completion** – `nvim-cmp` now pulls suggestions from LSP, LuaSnip snippets (including `friendly-snippets`), buffers, and filesystem paths for a fuller completion experience.
-- **AI assistance** – `copilot.lua` provides inline ghost-text suggestions, accepted with `<Tab>` when visible, and `CopilotChat.nvim` provides AI chat and code actions.
+- **AI assistance** – `copilot.lua` provides inline ghost-text suggestions, accepted with `<Tab>` when visible.
 
 Keep this list updated whenever you add plugins that rely on external binaries so future bootstraps stay painless.
 
@@ -93,7 +93,3 @@ Plugin-specific mappings live with their respective specs in `lua/plugins`. Curr
 - `<M-]>` / `<M-[>` (insert mode) – cycle AI suggestions.
 - `<C-]>` (insert mode) – dismiss the visible AI suggestion.
 - Copilot panel mappings: `[[` / `]]` jump between suggestions, `<CR>` accepts, `gr` refreshes, and `<M-CR>` opens the panel.
-- `Space`+`aa` (normal mode) – toggle AI chat.
-- `Space`+`aq` (normal mode) – ask AI from a prompt.
-- `Space`+`ae` / `Space`+`ar` / `Space`+`af` (normal/visual mode) – explain, review, or fix code with AI.
-- `Space`+`ad` / `Space`+`at` (normal/visual mode) – draft docs or tests with AI.

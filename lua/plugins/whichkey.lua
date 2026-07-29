@@ -21,7 +21,6 @@ return {
 
 			-- Optional: register common top-level groups so the menu looks nice
 			wk.add({
-				{ "<leader>a", group = "ai" },
 				{ "<leader>f", group = "find" },
 				{ "<leader>g", group = "git" },
 				{ "<leader>l", group = "lsp" },
