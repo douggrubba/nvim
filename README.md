@@ -18,7 +18,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 - `Node.js` + `npm` – runtime for `ts_ls` (typescript-language-server), `eslint`, `tailwindcss-language-server`, `prettier`, and installing `tree-sitter-cli`.
 - `tree-sitter-cli` (`npm install -g tree-sitter-cli`) – needed by `nvim-treesitter` when compiling/updating parsers.
 - `build-essential` (gcc, make, etc.) – compilers and build tools required for Treesitter parser builds.
-- `Go` toolchain – supplies `gofmt` for Conform.nvim and allows `gopls` (installed via Mason) to work against Go modules.
+- `Go` toolchain – allows `gopls` (installed via Mason) to work against Go modules. Install `goimports` with `go install golang.org/x/tools/cmd/goimports@latest` and ensure the Go bin directory is on `PATH` for Conform.nvim.
 - `stylua` – CLI formatter Conform.nvim uses for Lua buffers.
 - `prettier` – CLI formatter for JavaScript/TypeScript/React/JSON/HTML/CSS buffers.
 - `pint` – PHP formatter used by Conform.nvim. Install via Composer (`composer global require laravel/pint`) and ensure the binary is on `PATH`.
@@ -43,7 +43,7 @@ Even with Mason and Lazy handling most downloads, these tools are expected to ex
 
 ## Language Coverage & Tooling
 - **Lua** – `lua_ls` for LSP, `stylua` for formatting, Treesitter parser installed via `nvim-treesitter`.
-- **Go** – `gopls` for language features and `gofmt` via Conform.nvim.
+- **Go** – `gopls` for language features and `goimports` via Conform.nvim.
 - **JavaScript / TypeScript / React** – `ts_ls` plus `eslint` and `tailwindcss` servers, Treesitter parsers for `javascript`, `typescript`, and `tsx`, and `prettier` for formatting.
 - **Web stack (JSON/CSS/HTML)** – `jsonls`, `cssls`, and `html` servers, Treesitter parsers for each language, `prettier` formatting, and Tailwind IntelliSense for CSS utility classes.
 - **PHP** – `intelephense` LSP support, Treesitter parser, and CLI formatting via `pint`.
