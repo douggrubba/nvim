@@ -4,6 +4,7 @@ return {
 		event = "VeryLazy",
 		keys = {
 			{ "<leader>ky", "<cmd>WhichKey n <leader><cr>", desc = "Show keymaps" },
+			{ "<leader>ki", "<cmd>WhichKey i<cr>", desc = "Show insert keymaps" },
 		},
 		config = function()
 			local wk = require("which-key")
@@ -26,6 +27,12 @@ return {
 				{ "<leader>l", group = "lsp" },
 				{ "<leader>b", group = "buffers" },
 				{ "<leader>k", group = "keymaps" },
+				{ "<Tab>", desc = "Copilot: accept suggestion", mode = "i" },
+				{ "<M-w>", desc = "Copilot: accept word", mode = "i" },
+				{ "<M-l>", desc = "Copilot: accept line", mode = "i" },
+				{ "<M-[>", desc = "Copilot: previous suggestion", mode = "i" },
+				{ "<M-]>", desc = "Copilot: next suggestion", mode = "i" },
+				{ "<C-]>", desc = "Copilot: dismiss suggestion", mode = "i" },
 			})
 		end,
 	},

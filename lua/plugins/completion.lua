@@ -5,6 +5,27 @@ return {
   { "saadparwaiz1/cmp_luasnip", lazy = false },
 
   {
+    name = "copilot.lua",
+    dir = vim.fn.stdpath("data") .. "/lazy/copilot.lua",
+    lazy = false,
+    opts = {
+      panel = { enabled = false },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = false, -- Handled by the nvim-cmp <Tab> mapping below.
+          accept_word = "<M-w>",
+          accept_line = "<M-l>",
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
+      },
+    },
+  },
+
+  {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
@@ -31,6 +52,8 @@ return {
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
+            elseif require("copilot.suggestion").is_visible() then
+              require("copilot.suggestion").accept()
             elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
             else
