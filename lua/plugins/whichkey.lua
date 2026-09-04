@@ -27,6 +27,7 @@ return {
 				{ "<leader>l", group = "lsp" },
 				{ "<leader>b", group = "buffers" },
 				{ "<leader>k", group = "keymaps" },
+				{ "<leader>m", group = "harpoon" },
 				{ "<Tab>", desc = "Copilot: accept suggestion", mode = "i" },
 				{ "<M-w>", desc = "Copilot: accept word", mode = "i" },
 				{ "<M-l>", desc = "Copilot: accept line", mode = "i" },
