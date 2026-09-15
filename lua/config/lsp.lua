@@ -30,6 +30,16 @@ vim.lsp.config("gopls", {
   capabilities = capabilities,
 })
 
+-- Odin (project-specific collections and checker profiles belong in ols.json).
+vim.lsp.config("ols", {
+  capabilities = capabilities,
+  init_options = {
+    enable_snippets = true,
+    enable_auto_import = true,
+    enable_semantic_tokens = true,
+  },
+})
+
 -- TypeScript/JavaScript (new name)
 vim.lsp.config("ts_ls", {
   capabilities = capabilities,
@@ -83,6 +93,7 @@ vim.lsp.config("jsonls", {
 vim.lsp.enable({
   "lua_ls",
   "gopls",
+  "ols",
   "ts_ls",
   "intelephense",
   "sqlls",

@@ -7,6 +7,7 @@ return {
         formatters_by_ft = {
           lua = { "stylua" },
           go = { "goimports" },
+          odin = { "odinfmt" },
           javascript = { "prettier" },
           javascriptreact = { "prettier" },
           typescript = { "prettier" },

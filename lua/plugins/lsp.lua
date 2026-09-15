@@ -15,6 +15,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "gopls",
+          "ols", -- Includes the odinfmt formatter.
           "ts_ls",
           "intelephense",
           "sqlls",

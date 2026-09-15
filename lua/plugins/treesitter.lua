@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- Supports Neovim 0.11 and the configs.setup API.
     build = ":TSUpdate",
     lazy = false,
     config = function()
@@ -12,6 +13,7 @@ return {
       configs.setup({
         ensure_installed = {
           "lua",
+          "odin",
           "vim",
           "vimdoc",
           "python",
